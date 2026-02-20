@@ -1,0 +1,108 @@
+:root {
+  --bg: #f7f7f7;
+  --panel: #ffffff;
+  --line: #d9d9d9;
+  --text: #202020;
+  --snake: #2f7a35;
+  --snake-head: #1f5a24;
+  --food: #b03a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.score,
+.status {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.board {
+  margin-top: 1rem;
+  width: min(92vw, 500px);
+  height: min(92vw, 500px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-width), 1fr);
+  grid-template-rows: repeat(var(--grid-height), 1fr);
+}
+
+.cell {
+  border: 1px solid #f1f1f1;
+}
+
+.snake {
+  background: var(--snake);
+}
+
+.snake.head {
+  background: var(--snake-head);
+}
+
+.food {
+  background: var(--food);
+}
+
+.controls {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  width: min(92vw, 500px);
+}
+
+.middle-controls,
+.bottom-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.bottom-controls {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+button:active {
+  background: #ececec;
+}
+
+@media (min-width: 860px) {
+  .controls {
+    max-width: 360px;
+  }
+}
